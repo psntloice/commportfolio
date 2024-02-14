@@ -7,6 +7,10 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
+////
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+/////
 import SvgMaterialDesign from '../icons/SvgMaterialDesign';
 import AppAppBar from '../components/AppAppBar';
 import Hero from '../components/Hero';
@@ -31,6 +35,7 @@ function ToggleCustomTheme({
   toggleCustomTheme,
 }: ToggleCustomThemeProps) {
   return (
+  //  {/* button with dark and light */}
     <Box
       sx={{
         display: 'flex',
@@ -41,6 +46,7 @@ function ToggleCustomTheme({
         bottom: 24,
       }}
     >
+      
       <ToggleButtonGroup
         color="primary"
         exclusive
@@ -55,12 +61,13 @@ function ToggleCustomTheme({
         }}
       >
         <ToggleButton value>
-          <AutoAwesomeRoundedIcon sx={{ fontSize: '20px', mr: 1 }} />
-          Custom theme
+        <DarkModeIcon sx={{ fontSize: '20px', mr: 1 }}/>
+          Dark
         </ToggleButton>
         <ToggleButton value={false}>
-          <SvgMaterialDesign sx={{ fontSize: '20px', mr: 1 }} />
-          Material Design
+          
+          <LightModeIcon sx={{ fontSize: '20px', mr: 1 }} />
+          Light
         </ToggleButton>
       </ToggleButtonGroup>
     </Box>

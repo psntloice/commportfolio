@@ -42,8 +42,8 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            Our latest&nbsp;
-            <Typography
+            Welcome to Digital Atelier&nbsp;
+            {/* <Typography
               component="span"
               variant="h1"
               sx={{
@@ -52,9 +52,24 @@ export default function Hero() {
               }}
             >
               products
-            </Typography>
+            </Typography> */}
           </Typography>
           <Typography variant="body1" textAlign="center" color="text.secondary">
+          
+
+Step into a world where digital craftsmanship meets timeless elegance. I am [Your Name], a curator of digital experiences, dedicated to crafting bespoke websites and applications that embody sophistication and grace.
+
+In the delicate dance between design and functionality, I strive to create immersive digital landscapes that captivate the senses and inspire the soul. With a brushstroke of creativity and a meticulous attention to detail, I transform visions into reality, bringing brands to life in the digital realm.
+
+Within these digital halls, you'll discover a collection of my finest creations – each one a testament to the artistry and craftsmanship that defines my work. From minimalist masterpieces to intricately woven tapestries of code, every project reflects a harmonious blend of form and function, elegance and innovation.
+
+But my artistry extends beyond pixels and lines of code. It's rooted in the bonds of trust and collaboration forged with my clients. I listen intently to their aspirations, infuse their essence into every project, and deliver experiences that resonate with authenticity and refinement.
+
+So, take a moment to wander through these digital galleries, where each click unveils a new masterpiece waiting to be explored. If you're inspired by what you see, I invite you to embark on a journey of creativity and collaboration with me.
+
+Thank you for gracing my digital atelier with your presence. Together, let's craft digital experiences that transcend the ordinary and embrace the extraordinary.
+
+
             Explore our cutting-edge dashboard, delivering high-quality solutions
             tailored to your needs. <br />
             Elevate your experience with top-tier features and services.
@@ -66,7 +81,7 @@ export default function Hero() {
             useFlexGap
             sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
           >
-            <TextField
+            {/* <TextField
               id="outlined-basic"
               hiddenLabel
               size="small"
@@ -77,18 +92,18 @@ export default function Hero() {
                 autocomplete: 'off',
                 ariaLabel: 'Enter your email address',
               }}
-            />
-            <Button variant="contained" color="primary">
+            /> */}
+            {/* <Button variant="contained" color="primary">
               Start now
-            </Button>
+            </Button> */}
           </Stack>
-          <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
+          {/* <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
             By clicking &quot;Start now&quot; you agree to our&nbsp;
             <Link href="#" color="primary">
               Terms & Conditions
             </Link>
             .
-          </Typography>
+          </Typography> */}
         </Stack>
         <Box
           id="image"
