@@ -15,21 +15,57 @@ import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
 const items = [
   {
     icon: <SettingsSuggestRoundedIcon />,
+    title: 'Interactive Showcase',
+    description:
+      'Explore our interactive demos to experience the power of our solutions firsthand. Engage with dynamic interfaces and see how our projects can transform your digital presence.',
+  },
+  {
+    icon: <SettingsSuggestRoundedIcon />,
     title: 'Adaptable performance',
     description:
-      'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
+      'Our products effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
   },
   {
     icon: <ConstructionRoundedIcon />,
-    title: 'Built to last',
+    title: 'Custom Solutions',
     description:
-      'Experience unmatched durability that goes above and beyond with lasting investment.',
+      'From concept to execution, we craft bespoke solutions tailored to your unique needs. Our team listens closely to your requirements and delivers personalized solutions that exceed expectations.',
   },
   {
     icon: <ThumbUpAltRoundedIcon />,
     title: 'Great user experience',
     description:
-      'Integrate our product into your routine with an intuitive and easy-to-use interface.',
+      'Integrate our products into your routine with an intuitive and easy-to-use interface.',
+  },
+  {
+    icon: <SettingsSuggestRoundedIcon />,
+    title: 'Responsive Design',
+    description:
+      'Seamlessly access our applications on any device, from desktop to mobile. Our responsive designs ensure an optimal viewing experience, no matter the screen size.',
+  },
+  {
+    icon: <AutoFixHighRoundedIcon />,
+    title: 'Innovative functionality',
+    description:
+      'Harnessing the latest technologies like React, Vue, and Next.js, we build innovative solutions that propel your business forward. Stay ahead of the curve with our expertise in cutting-edge frameworks. Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+  },
+  {
+    icon: <AutoFixHighRoundedIcon />,
+    title: 'Innovative functionality',
+    description:
+      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+  },
+  {
+    icon: <AutoFixHighRoundedIcon />,
+    title: 'Innovative functionality',
+    description:
+      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+  },
+  {
+    icon: <AutoFixHighRoundedIcon />,
+    title: 'Innovative functionality',
+    description:
+      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
   },
   {
     icon: <AutoFixHighRoundedIcon />,
@@ -47,7 +83,7 @@ const items = [
     icon: <QueryStatsRoundedIcon />,
     title: 'Precision in every detail',
     description:
-      'Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.',
+      'Enjoy a meticulously crafted products where small touches make a significant impact on your overall experience.',
   },
 ];
 
@@ -81,7 +117,7 @@ export default function Highlights() {
             Highlights
           </Typography>
           <Typography variant="body1" sx={{ color: 'grey.400' }}>
-            Explore why our product stands out: adaptability, durability,
+            Explore why our products stand out: adaptability, durability,
             user-friendly design, and innovation. Enjoy reliable customer support and
             precision in every detail.
           </Typography>

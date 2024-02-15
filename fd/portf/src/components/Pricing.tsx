@@ -14,44 +14,50 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
-    description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
+    title: 'Basic',
+    services: [
+           'Customizable Website Design',
+'Responsive Front-End Development',
+'Basic SEO Optimization'
     ],
-    buttonText: 'Sign up for free',
-    buttonVariant: 'outlined',
+    description: [
+      'Up to 5 Pages',
+      'Contact Form Integration',
+      'Social Media Integration'
+    ],
   },
   {
-    title: 'Professional',
+  title: 'Standard',
+  services: [
+    'Advanced Website Design',
+'Front-End Development with Animation',
+'Database Integration',
+'E-commerce Functionality'
+  ],
+    description: [
+     ' Up to 10 Pages',
+'Custom Content Management System (CMS)',
+'Blog or News Section',
+'Analytics Integration'
+    ],
+  },
+  {
+    title: 'Premium',
     subheader: 'Recommended',
-    price: '15',
-    description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
-      'Dedicated team',
-      'Best deals',
+    services: [
+      'Premium Website Design with Custom Graphics',
+      'Full Stack Development (Front-End and Back-End)',
+      'Advanced Database Management',
+      'API Integration'
     ],
-    buttonText: 'Start now',
-    buttonVariant: 'contained',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+      'Unlimited Pages',
+'Priority Support',
+'Regular Maintenance and Updates',
+'Dedicated Account Manager'
     ],
-    buttonText: 'Contact us',
-    buttonVariant: 'outlined',
   },
+  
 ];
 
 export default function Pricing() {
@@ -99,11 +105,11 @@ export default function Pricing() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 4,
-                border: tier.title === 'Professional' ? '1px solid' : undefined,
+                border: tier.title === 'Premium' ? '1px solid' : undefined,
                 borderColor:
-                  tier.title === 'Professional' ? 'primary.main' : undefined,
+                  tier.title === 'Premium' ? 'primary.main' : undefined,
                 background:
-                  tier.title === 'Professional'
+                  tier.title === 'Premium'
                     ? 'linear-gradient(#033363, #021F3B)'
                     : undefined,
               }}
@@ -116,13 +122,13 @@ export default function Pricing() {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     color:
-                      tier.title === 'Professional' ? 'primary.contrastText' : '',
+                      tier.title === 'Premium' ? 'primary.contrastText' : '',
                   }}
                 >
                   <Typography component="h3" variant="h6">
                     {tier.title}
                   </Typography>
-                  {tier.title === 'Professional' && (
+                  {tier.title === 'Premium' && (
                     <Chip
                       icon={<AutoAwesomeIcon />}
                       label={tier.subheader}
@@ -146,17 +152,12 @@ export default function Pricing() {
                     display: 'flex',
                     alignItems: 'baseline',
                     color:
-                      tier.title === 'Professional'
+                      tier.title === 'Premium'
                         ? 'primary.contrastText'
                         : undefined,
                   }}
                 >
-                  <Typography component="h3" variant="h2">
-                    ${tier.price}
-                  </Typography>
-                  <Typography component="h3" variant="h6">
-                    &nbsp; per month
-                  </Typography>
+                 
                 </Box>
                 <Divider
                   sx={{
@@ -179,7 +180,7 @@ export default function Pricing() {
                       sx={{
                         width: 20,
                         color:
-                          tier.title === 'Professional'
+                          tier.title === 'Premium'
                             ? 'primary.light'
                             : 'primary.main',
                       }}
@@ -189,7 +190,7 @@ export default function Pricing() {
                       variant="subtitle2"
                       sx={{
                         color:
-                          tier.title === 'Professional'
+                          tier.title === 'Premium'
                             ? 'primary.contrastText'
                             : undefined,
                       }}
@@ -202,12 +203,11 @@ export default function Pricing() {
               <CardActions>
                 <Button
                   fullWidth
-                  variant={tier.buttonVariant as 'outlined' | 'contained'}
+                  // variant={tier.buttonVariant as 'outlined' | 'contained'}
                   component="a"
                   href="/material-ui/getting-started/templates/checkout/"
                   target="_blank"
                 >
-                  {tier.buttonText}
                 </Button>
               </CardActions>
             </Card>

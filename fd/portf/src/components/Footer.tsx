@@ -21,7 +21,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
-      <Link href="https://mui.com/">Sitemark&nbsp;</Link>
+      <Link href="#">Qwerty&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   );
@@ -56,6 +56,7 @@ export default function Footer() {
           }}
         >
           <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
+          
             <Box sx={{ ml: '-15px' }}>
               <img
                 src={
@@ -65,6 +66,29 @@ export default function Footer() {
                 alt="logo of sitemark"
               />
             </Box>
+            <Stack
+            direction={{ xs: "column", sm: "row" }}
+            alignSelf="center"
+            spacing={1}
+            useFlexGap
+            sx={{ pt: 2, width: { xs: "100%", sm: "auto" } }}
+          >
+            <TextField
+              id="outlined-basic"
+              hiddenLabel
+              size="small"
+              variant="outlined"
+              aria-label="Enter your email address"
+              placeholder="Your email address"
+              inputProps={{
+                autocomplete: 'off',
+                ariaLabel: 'Enter your email address',
+              }}
+            />
+            <Button variant="contained" color="primary">
+Talk to us
+            </Button>
+          </Stack>
             <Typography variant="body2" fontWeight={600} gutterBottom>
               Newsletter
             </Typography>
@@ -131,24 +155,10 @@ export default function Footer() {
             About us
           </Link>
           <Link color="text.secondary" href="#">
-            Careers
+            Terms
           </Link>
           <Link color="text.secondary" href="#">
             Press
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
-          }}
-        >
-          <Typography variant="body2" fontWeight={600}>
-            Legal
-          </Typography>
-          <Link color="text.secondary" href="#">
-            Terms
           </Link>
           <Link color="text.secondary" href="#">
             Privacy
@@ -157,6 +167,7 @@ export default function Footer() {
             Contact
           </Link>
         </Box>
+       
       </Box>
       <Box
         sx={{
@@ -169,15 +180,7 @@ export default function Footer() {
         }}
       >
         <div>
-          <Link color="text.secondary" href="#">
-            Privacy Policy
-          </Link>
-          <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
-            &nbsp;•&nbsp;
-          </Typography>
-          <Link color="text.secondary" href="#">
-            Terms of Service
-          </Link>
+          
           <Copyright />
         </div>
         <Stack
