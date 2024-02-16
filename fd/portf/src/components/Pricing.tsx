@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -12,6 +12,21 @@ import Typography from '@mui/material/Typography';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
+const [isVisible, setIsVisible] = useState(false);
+
+const contactUsStyle = {
+  fontSize: '1.2rem', // Adjust font size as needed
+  color: 'blue', // Adjust color as needed
+  display: 'inline-block',
+  fontWeight: 'bold',
+  transform: 'scale(1)', // Start at normal size
+  transition: 'transform 0.2s ease-in-out', // Adjust transition duration and timing
+};
+
+const contactUsHoverStyle = {
+  ...contactUsStyle, // Inherit base styles
+  transform: 'scale(1.1)', // Slightly enlarged on hover
+};
 
 const tiers = [
   {
@@ -212,15 +227,9 @@ export default function Pricing() {
       <Typography variant="body1" color="text.secondary" textAlign={"center"}>
             <h2> Get in touch with us to discuss your specific needs and find the perfect plan for your business.</h2>
 <br /><span
-     style={{
-      display: 'inline-block',
-      animation: `pop-shrink 1s linear infinite alternate`,
-      animationName: `
-        0% { transform: scale(1); }
-        50% { transform: scale(1.2); }
-        100% { transform: scale(1); }
-      `,
-    }}
+    style={isVisible ? contactUsHoverStyle : contactUsStyle}
+    onMouseEnter={() => setIsVisible(true)}
+    onMouseLeave={() => setIsVisible(false)}
   >
     
     Contact us for pricing.
