@@ -14,7 +14,6 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import SvgMaterialDesign from '../icons/SvgMaterialDesign';
 import AppAppBar from '../components/AppAppBar';
 import Hero from '../components/Hero';
-import LogoCollection from '../components/LogoCollection';
 import Highlights from '../components/Highlights';
 import Pricing from '../components/Pricing';
 import Features from '../components/Features';
@@ -92,7 +91,6 @@ export default function LandingPage() {
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Hero />
       <Box sx={{ bgcolor: 'background.default' }}>
-        <LogoCollection />
         <Features />
         <Divider />
      

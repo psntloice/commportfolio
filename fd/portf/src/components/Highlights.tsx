@@ -45,28 +45,17 @@ const items = [
   },
   {
     icon: <AutoFixHighRoundedIcon />,
-    title: 'Innovative functionality',
+    title: 'Scalable Architecture',
     description:
-      'Harnessing the latest technologies like React, Vue, and Next.js, we build innovative solutions that propel your business forward. Stay ahead of the curve with our expertise in cutting-edge frameworks. Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+      'Built for growth, our solutions feature scalable architectures that evolve with your business. Whether you are a startup or an enterprise, our systems can handle your expanding needs with ease.',
   },
   {
     icon: <AutoFixHighRoundedIcon />,
-    title: 'Innovative functionality',
+    title: 'Secure Solutions',
     description:
-      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+      'Protecting your data is our top priority. With robust security measures in place, you can trust that your information is safe and secure in our applications.',
   },
-  {
-    icon: <AutoFixHighRoundedIcon />,
-    title: 'Innovative functionality',
-    description:
-      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
-  },
-  {
-    icon: <AutoFixHighRoundedIcon />,
-    title: 'Innovative functionality',
-    description:
-      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
-  },
+  
   {
     icon: <AutoFixHighRoundedIcon />,
     title: 'Innovative functionality',
@@ -117,9 +106,7 @@ export default function Highlights() {
             Highlights
           </Typography>
           <Typography variant="body1" sx={{ color: 'grey.400' }}>
-            Explore why our products stand out: adaptability, durability,
-            user-friendly design, and innovation. Enjoy reliable customer support and
-            precision in every detail.
+            What makes our products stand out?
           </Typography>
         </Box>
         <Grid container spacing={2.5}>

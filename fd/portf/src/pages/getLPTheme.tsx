@@ -22,11 +22,11 @@ declare module '@mui/material/styles/createPalette' {
 
 export const brand = {
   50: '#F0F7FF',
-  100: '#CEE5FD',
+  100: '#cefded',
   200: '#9cfcdf',
   300: '#3d9633',
-  400: '#0A66C2',
-  500: '#0959AA',
+  400: '#0ac29a',
+  500: '#09aa62',
   600: '#064079',
   700: '#033363',
   800: '#02294F',

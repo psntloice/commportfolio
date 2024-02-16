@@ -57,38 +57,36 @@ export default function Footer() {
         >
           <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
           
-            <Box sx={{ ml: '-15px' }}>
+            <Box sx={{ ml: '-15px' }} mb={1}>
               <img
                 src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
+                  ''
                 }
                 style={logoStyle}
-                alt="logo of sitemark"
+                alt="Q"
               />
             </Box>
-            <Stack
-            direction={{ xs: "column", sm: "row" }}
-            alignSelf="center"
-            spacing={1}
-            useFlexGap
-            sx={{ pt: 2, width: { xs: "100%", sm: "auto" } }}
-          >
-            <TextField
-              id="outlined-basic"
-              hiddenLabel
-              size="small"
-              variant="outlined"
-              aria-label="Enter your email address"
-              placeholder="Your email address"
-              inputProps={{
-                autocomplete: 'off',
-                ariaLabel: 'Enter your email address',
-              }}
-            />
-            <Button variant="contained" color="primary">
-Talk to us
-            </Button>
-          </Stack>
+            <Typography variant="body2" fontWeight={600} gutterBottom>
+Reach Us            </Typography>
+            <Stack direction="row" spacing={1} useFlexGap mb={2}>
+              <TextField
+                id="outlined-basic"
+                hiddenLabel
+                size="small"
+                variant="outlined"
+                fullWidth
+                aria-label="Enter your email address"
+                placeholder="Your email address"
+                inputProps={{
+                  autocomplete: 'off',
+                  ariaLabel: 'Enter your email address',
+                }}
+              />
+              <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
+              Talk to us
+              </Button>
+            </Stack>
+           
             <Typography variant="body2" fontWeight={600} gutterBottom>
               Newsletter
             </Typography>
@@ -194,7 +192,7 @@ Talk to us
         >
           <IconButton
             color="inherit"
-            href="https://github.com/mui"
+            href="#"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
@@ -202,7 +200,7 @@ Talk to us
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://twitter.com/MaterialUI"
+            href="#"
             aria-label="X"
             sx={{ alignSelf: 'center' }}
           >
@@ -210,7 +208,7 @@ Talk to us
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://www.linkedin.com/company/mui/"
+            href="#"
             aria-label="LinkedIn"
             sx={{ alignSelf: 'center' }}
           >

@@ -14,30 +14,63 @@ import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
 
 const items = [
-  {
-    icon: <ViewQuiltRoundedIcon />,
-    title: 'Dashboard',
+    {
+    icon: <DevicesRoundedIcon />,
+    title: 'Available on all platforms',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
-    imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
+      'Access your dashboard from any device or platform, including desktop, tablet, and mobile, for seamless monitoring and management on the go.',
+    imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
+    imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
+  },
+  {
+    icon: <DevicesRoundedIcon />,
+    title: 'Data Security and Compliance',
+    description:
+      'Rest assured knowing that your dashboard data is secure and compliant with industry standards and regulations, with robust security measures and data encryption in place.',
+    imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
+    imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
-    title: 'Mobile integration',
+    title: 'Role-based Access Control',
     description:
-      'This item could provide information about the mobile app version of the product.',
+      'Control access to your dashboard and data with role-based permissions, ensuring that each user has the appropriate level of access and security.',
     imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
   },
   {
-    icon: <DevicesRoundedIcon />,
-    title: 'Available on all platforms',
+    icon: <ViewQuiltRoundedIcon />,
+    title: 'Interactive Dashboard',
     description:
-      'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
+      'Access a centralized dashboard that provides a comprehensive overview of key metrics, performance indicators, and actionable insights at a glance. Easily navigate through your tasks and projects with our user-friendly dashboard. Stay organized and in control of your workload with customizable layouts.',
+    imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
+    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
+  },
+  {
+    icon: <DevicesRoundedIcon />,
+    title: 'Integration with Third-party Tools',
+    description:
+      'Integrate your dashboard with other tools and services, such as CRM systems, marketing platforms, and analytics tools, to consolidate data and streamline workflows.',
     imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
   },
+  {
+    icon: <DevicesRoundedIcon />,
+    title: 'Customizable Alerts and Notifications',
+    description:
+      'Set up customizable alerts and notifications for specific events, thresholds, or triggers, ensuring you are alerted to important changes or issues as they occur.',
+    imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
+    imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
+  },
+  {
+    icon: <DevicesRoundedIcon />,
+    title: 'Feedback and Improvement',
+    description:
+      'Provide feedback and suggestions for dashboard enhancements and improvements, with regular updates and feature enhancements based on user input and requests.',
+    imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
+    imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
+  },
+  
 ];
 
 export default function Features() {
@@ -55,17 +88,9 @@ export default function Features() {
         <Grid item xs={12} md={6}>
           <div>
             <Typography component="h2" variant="h4" color="text.primary">
-              Product features
-            </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{ mb: { xs: 2, sm: 4 } }}
-            >
-              Here you can provide a brief overview of the key features of the
-              product. For example, you could list the number of features, the types
-              of features, add-ons, or the benefits of the features.
-            </Typography>
+            Explore Our Key Features
+                        </Typography>
+           
           </div>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
             {items.map(({ title }, index) => (

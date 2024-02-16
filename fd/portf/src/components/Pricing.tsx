@@ -12,49 +12,43 @@ import Typography from '@mui/material/Typography';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
+
 const tiers = [
   {
     title: 'Basic',
-    services: [
-           'Customizable Website Design',
-'Responsive Front-End Development',
-'Basic SEO Optimization'
-    ],
-    description: [
+    minititle: 'Ideal for individuals or small teams or businesses just getting started',
+       description: [
       'Up to 5 Pages',
-      'Contact Form Integration',
+      'Basic User Interface',
+      'Email Support',
       'Social Media Integration'
     ],
   },
   {
   title: 'Standard',
-  services: [
-    'Advanced Website Design',
-'Front-End Development with Animation',
-'Database Integration',
-'E-commerce Functionality'
-  ],
-    description: [
+  minititle: 'Perfect for growing teams or businesses with more advanced needs',
+      description: [
      ' Up to 10 Pages',
-'Custom Content Management System (CMS)',
-'Blog or News Section',
-'Analytics Integration'
+     'Customizable Workflows and Structures',
+     'Priority Email Support',
+'Basic Analytics',
+'Basic SEO Optimization '
     ],
   },
   {
     title: 'Premium',
+    minititle: 'Fully customizable plan tailored for large teams or businesses requiring robust features',
     subheader: 'Recommended',
-    services: [
-      'Premium Website Design with Custom Graphics',
-      'Full Stack Development (Front-End and Back-End)',
-      'Advanced Database Management',
-      'API Integration'
-    ],
-    description: [
+       description: [
       'Unlimited Pages',
-'Priority Support',
+      'Customizable Workflows and Structure with Advancement',
+'Priority Support on all contact platforms',
 'Regular Maintenance and Updates',
-'Dedicated Account Manager'
+'Dedicated Account Manager',
+'On-site Training',
+'Advanced Analytics',
+'Advanced SEO Optimization ',
+'Scalable Infrastructure',
     ],
   },
   
@@ -80,15 +74,10 @@ export default function Pricing() {
           textAlign: { sm: 'left', md: 'center' },
         }}
       >
-        <Typography component="h2" variant="h4" color="text.primary">
-          Pricing
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Quickly build an effective pricing table for your potential customers with
-          this layout. <br />
-          It&apos;s built with default Material UI components with little
-          customization.
-        </Typography>
+        <Typography component="h2" variant="h4" color="text.primary" textAlign={"center"}>
+        Choose a Plan That Fits Your Needs
+                </Typography>
+        
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         {tiers.map((tier) => (
@@ -96,7 +85,7 @@ export default function Pricing() {
             item
             key={tier.title}
             xs={12}
-            sm={tier.title === 'Enterprise' ? 12 : 6}
+            sm={tier.title === 'Premium' ? 12 : 6}
             md={4}
           >
             <Card
@@ -110,7 +99,7 @@ export default function Pricing() {
                   tier.title === 'Premium' ? 'primary.main' : undefined,
                 background:
                   tier.title === 'Premium'
-                    ? 'linear-gradient(#033363, #021F3B)'
+                    ? 'linear-gradient(#036343, #023b19)'
                     : undefined,
               }}
             >
@@ -128,6 +117,7 @@ export default function Pricing() {
                   <Typography component="h3" variant="h6">
                     {tier.title}
                   </Typography>
+                  
                   {tier.title === 'Premium' && (
                     <Chip
                       icon={<AutoAwesomeIcon />}
@@ -146,6 +136,7 @@ export default function Pricing() {
                       }}
                     />
                   )}
+                 
                 </Box>
                 <Box
                   sx={{
@@ -166,6 +157,9 @@ export default function Pricing() {
                     borderColor: 'grey.500',
                   }}
                 />
+                 <Typography >
+                    {tier.minititle}
+                  </Typography>
                 {tier.description.map((line) => (
                   <Box
                     key={line}
@@ -201,19 +195,40 @@ export default function Pricing() {
                 ))}
               </CardContent>
               <CardActions>
-                <Button
+                {/* <Button
                   fullWidth
                   // variant={tier.buttonVariant as 'outlined' | 'contained'}
                   component="a"
                   href="/material-ui/getting-started/templates/checkout/"
                   target="_blank"
                 >
-                </Button>
+                </Button> */}
               </CardActions>
             </Card>
           </Grid>
         ))}
       </Grid>
+      <h1>Not Sure Which Plan is Right for You?</h1>
+      <Typography variant="body1" color="text.secondary" textAlign={"center"}>
+            <h2> Get in touch with us to discuss your specific needs and find the perfect plan for your business.</h2>
+<br /><span
+     style={{
+      display: 'inline-block',
+      animation: `pop-shrink 1s linear infinite alternate`,
+      animationName: `
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+      `,
+    }}
+  >
+    
+    Contact us for pricing.
+  </span> 
+        </Typography>
+        
     </Container>
+
+
   );
 }
