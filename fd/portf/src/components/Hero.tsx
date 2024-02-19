@@ -101,20 +101,20 @@ QWERTY &nbsp;
             captivate the senses and inspire the soul. With a brushstroke of
             creativity and a meticulous attention to detail, I transform visions
             into reality, bringing brands to life in the digital realm. Within
-            these digital halls, you'll discover a collection of my finest
-            creations – each one a testament to the artistry and craftsmanship
+            these digital halls, you will discover a collection of my finest
+            creations each one a testament to the artistry and craftsmanship
             that defines my work. From minimalist masterpieces to intricately
             woven tapestries of code, every project reflects a harmonious blend
             of form and function, elegance and innovation. But my artistry
-            extends beyond pixels and lines of code. It's rooted in the bonds of
+            extends beyond pixels and lines of code. It is rooted in the bonds of
             trust and collaboration forged with my clients. I listen intently to
             their aspirations, infuse their essence into every project, and
             deliver experiences that resonate with authenticity and refinement.
             So, take a moment to wander through these digital galleries, where
             each click unveils a new masterpiece waiting to be explored. If
-            you're inspired by what you see, I invite you to embark on a journey
+            you are inspired by what you see, I invite you to embark on a journey
             of creativity and collaboration with me. Thank you for gracing my
-            digital atelier with your presence. Together, let's craft digital
+            digital atelier with your presence. Together, let uss craft digital
             experiences that transcend the ordinary and embrace the
             extraordinary.
           </Typography>
