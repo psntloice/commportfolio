@@ -119,7 +119,7 @@ QWERTY &nbsp;
             extraordinary.
           </Typography>
                  </Stack>
-        <Box
+        {/* <Box
           id="image"
           sx={(theme) => ({
             mt: { xs: 8, sm: 10 },
@@ -142,7 +142,7 @@ QWERTY &nbsp;
                 ? `0 0 12px 8px ${alpha("#9CCCFC", 0.2)}`
                 : `0 0 24px 12px ${alpha("#033363", 0.2)}`,
           })}
-        />
+        /> */}
       </Container>
     </Box>
   );

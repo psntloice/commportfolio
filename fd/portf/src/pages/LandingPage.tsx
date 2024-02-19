@@ -82,7 +82,8 @@ export default function LandingPage() {
   };
 
   const toggleCustomTheme = () => {
-    setShowCustomTheme((prev) => !prev);
+    // setShowCustomTheme((prev) => !prev);
+    alert('Work in Progress!');
   };
 
   return (

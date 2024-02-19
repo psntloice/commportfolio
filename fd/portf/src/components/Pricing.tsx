@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { styled, keyframes } from '@mui/system';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -12,21 +14,44 @@ import Typography from '@mui/material/Typography';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
-const [isVisible, setIsVisible] = useState(false);
 
 const contactUsStyle = {
   fontSize: '1.2rem', // Adjust font size as needed
-  color: 'blue', // Adjust color as needed
+  color: 'white', // Adjust color as needed
   display: 'inline-block',
   fontWeight: 'bold',
   transform: 'scale(1)', // Start at normal size
-  transition: 'transform 0.2s ease-in-out', // Adjust transition duration and timing
+  transition: 'transform 15s ease-in-out', // Adjust transition duration and timing
+  opacity: 1, // Start with full opacity
 };
 
 const contactUsHoverStyle = {
   ...contactUsStyle, // Inherit base styles
-  transform: 'scale(1.1)', // Slightly enlarged on hover
+  transform: 'scale(2)', // Scale up slightly on hover
+  opacity: 0.7, // Reduce opacity on hover
 };
+
+// Define keyframes for horizontal dancing animation
+const danceHorizontalKeyframes = keyframes`
+0% {
+  transform: translateX(0) scale(1); /* Start at the initial position and scale */
+}
+33% {
+  transform: translateX(-5px) scale(1.7); /* Move to the left and scale up */
+}
+66% {
+  transform: translateX(15px) scale(1.3); /* Move to the right and scale down */
+}
+100% {
+  transform: translateX(0) scale(1); /* Back to the original position and scale */
+}
+`;
+
+// Create a styled component for the animated "Contact us" text
+const AnimatedContactUs = styled('span')`
+  ${contactUsStyle}
+  animation: ${danceHorizontalKeyframes} 5s ease infinite alternate;
+`;
 
 const tiers = [
   {
@@ -70,6 +95,12 @@ const tiers = [
 ];
 
 export default function Pricing() {
+  const [isVisible, setIsVisible] = useState(false);
+// useInView hook returns a tuple with a ref and a boolean value indicating if the element is in view
+const { ref, inView } = useInView({
+  /* Optional options object */
+  threshold: 0.5, // Trigger when 50% of the target is visible
+});
   return (
     <Container
       id="pricing"
@@ -226,14 +257,21 @@ export default function Pricing() {
       <h1>Not Sure Which Plan is Right for You?</h1>
       <Typography variant="body1" color="text.secondary" textAlign={"center"}>
             <h2> Get in touch with us to discuss your specific needs and find the perfect plan for your business.</h2>
-<br /><span
-    style={isVisible ? contactUsHoverStyle : contactUsStyle}
-    onMouseEnter={() => setIsVisible(true)}
-    onMouseLeave={() => setIsVisible(false)}
+<br />
+<AnimatedContactUs
+    ref={ref}
+    style={contactUsStyle} // Apply the default style
   >
-    
-    Contact us for pricing.
-  </span> 
+<Button variant="contained"  sx={{
+    background: (theme) =>
+                          theme.palette.mode === 'light' ? '' : 'none',
+                          mt: 4,
+                          flexShrink: 0 }}> 
+  
+    Contact us for pricing
+    </Button>
+  </AnimatedContactUs>
+
         </Typography>
         
     </Container>
