@@ -1,5 +1,6 @@
-import * as React from 'react';
+// import * as React from 'react';
 import { PaletteMode } from '@mui/material';
+import React, { useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -73,8 +74,11 @@ function ToggleCustomTheme({
 }
 
 export default function LandingPage() {
-  const [mode, setMode] = React.useState<PaletteMode>('dark');
-  const [showCustomTheme, setShowCustomTheme] = React.useState(true);
+  // const [mode, setMode] = React.useState<PaletteMode>('dark');
+  const [mode, setMode] = useState<PaletteMode>('dark');
+  // const [showCustomTheme, setShowCustomTheme] = React.useState(true);
+  const [showCustomTheme, setShowCustomTheme] = useState(true);
+
   const LPtheme = createTheme(getLPTheme(mode));
 
   const toggleColorMode = () => {
@@ -88,7 +92,7 @@ export default function LandingPage() {
 
   return (
     <ThemeProvider theme={showCustomTheme ? LPtheme : defaultTheme}>
-      <CssBaseline />
+    <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Hero />
       <Box sx={{ bgcolor: 'background.default' }}>
