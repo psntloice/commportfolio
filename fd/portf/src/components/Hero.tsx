@@ -14,21 +14,34 @@ export default function Hero() {
       id="hero"
       sx={(theme) => ({
         width: "100%",
-        backgroundImage:          
-          theme.palette.mode === "light"
-            ? "linear-gradient(180deg, #B1C996, #FFFFFF) "
-            : "linear-gradient(#228b3a , #090E10)",
-        backgroundSize: "100% 20%",
+    background: `linear-gradient(180deg, ${
+      theme.palette.mode === "light" ? "#B1C996" : "#228b3a"
+    }, ${
+      theme.palette.mode === "light" ? "#FFFFFF" : "#090E10"
+    } 30%, rgba(0, 0, 0, 0.5) 50%)`,
+        backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
       })}
     >
+      <div style={{
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    height: "50%", // Cover the bottom half of the Box
+    background: "rgba(0, 0, 0, 0)", // Transparent overlay
+  }}>
       <Container
         sx={{
+
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 },
+         
+          justifyContent: "center", // Center content vertically
+          height: "100%", // Ensure the content occupies the entire Box height
         }}
       >
         <Stack spacing={3} useFlexGap sx={{ width: { xs: "100%", sm: "90%" } }}>
@@ -104,7 +117,6 @@ QWERTY &nbsp;
             these digital halls, you will discover a collection of my finest
             creations each one a testament to the artistry and craftsmanship
             that defines my work. From minimalist masterpieces to intricately
-            woven tapestries of code, every project reflects a harmonious blend
             of form and function, elegance and innovation. But my artistry
             extends beyond pixels and lines of code. It is rooted in the bonds of
             trust and collaboration forged with my clients. I listen intently to
@@ -144,6 +156,7 @@ QWERTY &nbsp;
           })}
         /> */}
       </Container>
+      </div>
     </Box>
   );
 }
