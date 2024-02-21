@@ -75,6 +75,7 @@ function ToggleCustomTheme({
 
 export default function LandingPage() {
   const [mode, setMode] = React.useState<PaletteMode>('dark');
+  // const mode: PaletteMode = 'dark';
   // const [mode, setMode] = useState<PaletteMode>('dark');
   const [showCustomTheme, setShowCustomTheme] = React.useState(true);
   // const [showCustomTheme, setShowCustomTheme] = useState(true);
@@ -94,12 +95,13 @@ export default function LandingPage() {
     <ThemeProvider theme={showCustomTheme ? LPtheme : defaultTheme}>
     <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
-      <Hero />
+      
       <Box sx={{ bgcolor: 'background.default' }}>
+      <Hero />
+      <Divider />
         <Features />
         <Divider />
      
-        <Divider />
         <Highlights />
         <Divider />
         <Pricing />

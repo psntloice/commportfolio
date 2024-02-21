@@ -7,6 +7,8 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import Divider from '@mui/material/Divider';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -23,14 +25,7 @@ export default function Hero() {
         backgroundRepeat: "no-repeat",
       })}
     >
-      <div style={{
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    height: "50%", // Cover the bottom half of the Box
-    background: "rgba(0, 0, 0, 0)", // Transparent overlay
-  }}>
+    
       <Container
         sx={{
 
@@ -107,7 +102,48 @@ QWERTY &nbsp;
             <br />
             <br />
             <br />
-            <br />I am Loice Kamau, a curator of digital experiences, dedicated
+            <Divider />
+            <Box
+  sx={{
+    display: "flex",
+    flexDirection: { xs: "column", sm: "row" },
+    gap: "20px", // Adjust the gap between the image and text
+    mt: { xs: 8, sm: 10 },
+    
+  }}
+>
+  <Box
+    sx={{
+      width: "25%",
+      marginTop: "5rem",
+      maxHeight: "27rem", // Adjust the maximum height to cover desired number of lines
+      height: "auto", // Adjust height to auto
+      background: `url("/images/avatr1.png") center/contain no-repeat`,
+      borderRadius: "90px",
+      outline: "6px solid",
+      outlineColor: (theme) =>
+        theme.palette.mode === "light" ? alpha("#91bda6", 0.5) : alpha("#6ade87", 0.1),
+      boxShadow: (theme) =>
+        theme.palette.mode === "light"
+          ? `0 0 12px 8px ${alpha("#bce8ce", 0.2)}`
+          : `0 0 24px 12px ${alpha("#238233", 0.2)}`,
+    }}
+  />
+  
+  <Typography
+  variant="body1"
+  textAlign="center" // Adjusted to "left" from "center"
+  color="text.secondary"
+  sx={{
+    pt: 1,
+    fontSize: { xs: "16px", sm: "20px" },
+    lineHeight: { xs: "1.5", sm: "1.7" },
+    fontFamily: "Brandon Grotesque, sans-serif",
+    width: "calc(70% - 20px)", // Adjust width to fill remaining space after accounting for gap
+    wordWrap: "break-word", // Ensure text wraps around the image
+  }}
+>
+I am Loice Kamau, a curator of digital experiences, dedicated
             to crafting bespoke websites and applications that embody
             sophistication and grace. In the delicate dance between design and
             functionality, I strive to create immersive digital landscapes that
@@ -128,7 +164,10 @@ QWERTY &nbsp;
             of creativity and collaboration with me. Thank you for gracing my
             digital atelier with your presence. Together, let uss craft digital
             experiences that transcend the ordinary and embrace the
-            extraordinary.
+            extraordinary.  </Typography>
+</Box>
+            
+          
           </Typography>
                  </Stack>
         {/* <Box
@@ -140,8 +179,8 @@ QWERTY &nbsp;
             width: "100%",
             backgroundImage:
               theme.palette.mode === "light"
-                ? 'url("/static/images/templates/templates-images/hero-light.png")'
-                : 'url("/static/images/templates/templates-images/hero-dark.png")',
+                ? 'url("/images/avatr1.png")'
+                : 'url("/images/avatr1.png")',
             backgroundSize: "cover",
             borderRadius: "10px",
             outline: "1px solid",
@@ -156,6 +195,14 @@ QWERTY &nbsp;
           })}
         /> */}
       </Container>
+      <div style={{
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    height: "10%", // Cover the bottom half of the Box
+    background: "rgba(0, 0, 0, 0)", // Transparent overlay
+  }}>
       </div>
     </Box>
   );
