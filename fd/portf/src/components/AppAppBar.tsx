@@ -101,7 +101,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   onClick={() => scrollToSection('features')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.secondary">
                     Features
                   </Typography>
                 </MenuItem>
@@ -110,7 +110,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   onClick={() => scrollToSection('highlights')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.secondary">
                     Highlights
                   </Typography>
                 </MenuItem>
@@ -118,7 +118,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   onClick={() => scrollToSection('pricing')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.secondary">
                     Pricing
                   </Typography>
                 </MenuItem>
@@ -126,7 +126,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   onClick={() => scrollToSection('faq')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.secondary">
                     FAQ
                   </Typography>
                 </MenuItem>

@@ -17,10 +17,10 @@ export default function Hero() {
       sx={(theme) => ({
         width: "100%",
     background: `linear-gradient(180deg, ${
-      theme.palette.mode === "light" ? "#9ee6ad" : "#228b3a"
+      theme.palette.mode === "light" ? "#abebc9" : "#228b3a"
     }, ${
       theme.palette.mode === "light" ? "#FFFFFF" : "#090E10"
-    } 30%, rgba(0, 0, 0, 0.5) 50%)`,
+    } 30%,  ${theme.palette.mode === "light" ? "rgba(255, 255, 255, 0.5)" : "#090E10"} 50%)`,
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
       })}
