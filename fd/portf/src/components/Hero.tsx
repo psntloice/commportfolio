@@ -17,7 +17,7 @@ export default function Hero() {
       sx={(theme) => ({
         width: "100%",
     background: `linear-gradient(180deg, ${
-      theme.palette.mode === "light" ? "#B1C996" : "#228b3a"
+      theme.palette.mode === "light" ? "#9ee6ad" : "#228b3a"
     }, ${
       theme.palette.mode === "light" ? "#FFFFFF" : "#090E10"
     } 30%, rgba(0, 0, 0, 0.5) 50%)`,
@@ -118,7 +118,7 @@ QWERTY &nbsp;
       marginTop: "5rem",
       maxHeight: "27rem", // Adjust the maximum height to cover desired number of lines
       height: "auto", // Adjust height to auto
-      background: `url("/images/avatr1.png") center/contain no-repeat`,
+      background: `url("/images/avatr2.png") center/contain no-repeat`,
       borderRadius: "90px",
       outline: "6px solid",
       outlineColor: (theme) =>
