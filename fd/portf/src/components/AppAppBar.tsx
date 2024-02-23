@@ -21,11 +21,11 @@ const logoStyle = {
 };
 
 interface AppAppBarProps {
-  mode: PaletteMode;
+ darkMode: PaletteMode;
   toggleColorMode: () => void;
 }
 
-function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
+function AppAppBar({ darkMode, toggleColorMode }: AppAppBarProps) {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
