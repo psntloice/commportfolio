@@ -140,7 +140,8 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { ThemeProvider } from '@mui/material/styles';
-import myTheme from '../styles/mytheme';
+import mytheme from '../styles/mytheme';
+import { PaletteMode } from '@mui/material';
 
 // Define the type for theme context
 interface ThemeContextType {
@@ -167,9 +168,10 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <ThemeProvider theme={myTheme}>
-      <CssBaseline />
+    <ThemeProvider theme={mytheme(darkMode ? 'dark' : 'light')}>
+            <CssBaseline />
       {/* <AppAppBar darkMode={darkMode} /> */}
+      <AppAppBar darkMode={false} toggleColorMode={toggleDarkMode} />
       {/* <AppAppBar mode={darkMode} toggleColorMode={toggleColorMode} /> */}
       <Box sx={{ bgcolor: 'background.default' }}>
         <Hero />

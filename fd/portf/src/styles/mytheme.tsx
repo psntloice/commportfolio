@@ -1,18 +1,21 @@
 import { createTheme } from '@mui/material/styles';
+import { PaletteMode } from '@mui/material';
 
-// Define your custom theme
-const theme = createTheme({
+// Define a function to get design tokens based on the mode
+const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
+    mode,
     primary: {
-      // Change the shades of blue to your custom color
-      light: '#9cfcdf', // Light shade of your custom color
-      main: '#0c7a54',  // Main shade of your custom color
-      dark: '#3c8f59',  // Dark shade of your custom color
-      contrastText: '#...', // Text color that contrasts with your custom color
+      light: mode === 'dark' ? '#FFFFFF' : '#9cfcdf',
+      main: mode === 'dark' ? '#CCCCCC' : '#0c7a54',
+      dark: mode === 'dark' ? '#999999' : '#3c8f59',
+      contrastText: '#...', // Add your contrast text color here
     },
-    // You can also customize other palette colors such as secondary, error, etc.
+    // Add other palette options as needed
   },
 });
 
-export default theme;
+// Define your custom theme using the getDesignTokens function
+const theme = (mode: PaletteMode) => createTheme(getDesignTokens(mode));
 
+export default theme;

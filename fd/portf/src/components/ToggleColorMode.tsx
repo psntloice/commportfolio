@@ -7,11 +7,11 @@ import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 import ModeNightRoundedIcon from '@mui/icons-material/ModeNightRounded';
 
 interface ToggleColorModeProps {
-  mode: PaletteMode;
+  darkMode: PaletteMode | boolean; 
   toggleColorMode: () => void;  
 }
 
-function ToggleColorMode({ mode, toggleColorMode }: ToggleColorModeProps) {
+function ToggleColorMode({ darkMode, toggleColorMode }: ToggleColorModeProps) {
   return (
     <Box sx={{ maxWidth: '32px' }}>
       <Button
@@ -21,7 +21,7 @@ function ToggleColorMode({ mode, toggleColorMode }: ToggleColorModeProps) {
         aria-label="button to toggle theme"
         sx={{ minWidth: '32px', height: '32px', p: '4px' }}
       >
-        {mode === 'dark' ? (
+        {darkMode === 'dark' ? (
           <WbSunnyRoundedIcon fontSize="small" />
         ) : (
           <ModeNightRoundedIcon fontSize="small" />
