@@ -105,6 +105,12 @@ export default function Features() {
                     }
                     return selectedItemIndex === index ? 'primary.light' : '';
                   },
+                  color: () => {
+                    if (selectedItemIndex === index) {
+                      return  'primary.backgbox';
+                    }
+                    
+                  },
                   background: (theme) => {
                     if (theme.palette.mode === 'light') {
                       return selectedItemIndex === index ? 'none' : '';
@@ -127,7 +133,7 @@ export default function Features() {
               mt: 4,
             }}
           >
-            {/* <Box
+            <Box
               sx={{
                 backgroundImage: (theme) =>
                   theme.palette.mode === 'light'
@@ -137,9 +143,9 @@ export default function Features() {
                 backgroundPosition: 'center',
                 minHeight: 280,
               }}
-            /> */}
+            />
             <Box sx={{ px: 2, pb: 2 }}>
-              <Typography color="text.secondary" variant="body2" fontWeight="bold">
+              <Typography color="text.primary" variant="body2" fontWeight="bold">
                 {selectedFeature.title}
               </Typography>
               <Typography color="text.secondary" variant="body2" sx={{ my: 0.5, fontFamily: "Brandon Grotesque, sans-serif" }}>

@@ -120,7 +120,7 @@ QWERTY &nbsp;
       maxHeight: "27rem",
       // width: "25%",
       // marginTop: "5rem",
-      height: "auto", // Adjust height to auto
+      height: { xs: "100%", sm: "auto" }, // Adjust height to auto
       background: `url("/images/avatr2.png") center/contain no-repeat`,
       borderRadius: "90px",
       outline: "6px solid",
