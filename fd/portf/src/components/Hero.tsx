@@ -107,8 +107,6 @@ QWERTY &nbsp;
   sx={{
     display: "flex",
     flexDirection: { xs: "column", sm: "row" },
-    alignItems: { xs: "center", sm: " " },
-    
     gap: "20px", // Adjust the gap between the image and text
     mt: { xs: 8, sm: 10 },
     
@@ -116,25 +114,27 @@ QWERTY &nbsp;
 >
   <Box
     sx={{
-      width: { xs: "auto", sm: "25%" }, // Full width on small screens, 25% on larger screens
-      maxWidth: { xs: "50%", sm: "none" }, // Remove maximum width on small screens
-      minWidth: { xs: "50%", sm: "none" },
-      marginTop: { xs: "2rem", sm: "5rem" }, // Adjusted marginTop for better alignment
-      minHeight: { xs: "10rem", sm: "27rem" },
-      // width: "25%",
-      // marginTop: "5rem",
-      height: { xs: "auto", sm: "auto" }, // Adjust height to auto
-      // background: `url("/images/avatr2.png") center/contain no-repeat`,
-      background: `url("/images/avatr2.png") cover no-repeat`,
-      backgroundSize: "cover",
-      borderRadius: { xs: "30px", sm: "90px" },
-      outline: { xs: "3px solid", sm: "6px solid" } ,
+      width: "25%",
+      marginTop: "5rem",
+      maxHeight: "27rem", // Adjust the maximum height to cover desired number of lines
+      height: "auto", // Adjust height to auto
+      background: `url("/images/avatr2.png") center/contain no-repeat`,
+ borderRadius: { xs: "50%", sm: "90px" },
+       outline: "6px solid",
       outlineColor: (theme) =>
         theme.palette.mode === "light" ? alpha("#91bda6", 0.5) : alpha("#6ade87", 0.1),
       boxShadow: (theme) =>
         theme.palette.mode === "light"
           ? `0 0 12px 8px ${alpha("#bce8ce", 0.2)}`
           : `0 0 24px 12px ${alpha("#238233", 0.2)}`,
+       '@media (max-width:600px)': {
+      width: "50%",
+      margin: "0 auto", // Center horizontally
+      display: "flex",
+      justifyContent: "left", // Center horizontally
+      alignItems: "center", // Center vertically
+      minHeight: "15rem"
+    },
     }}
   />
   
