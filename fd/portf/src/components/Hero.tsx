@@ -149,6 +149,12 @@ QWERTY &nbsp;
     fontFamily: "Brandon Grotesque, sans-serif",
     width: "calc(70% - 20px)", // Adjust width to fill remaining space after accounting for gap
     wordWrap: "break-word", // Ensure text wraps around the image
+    '@media (max-width:600px)': {
+      width: "97vw",
+      margin: "0 auto", // Center horizontally
+      justifyContent: "centre", // Center horizontally
+      alignItems: "center", // Center vertically
+    },
   }}
 >
 I am Loice Kamau, a curator of digital experiences, dedicated
