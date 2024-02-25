@@ -15,8 +15,8 @@ import ToggleColorMode from './ToggleColorMode';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 
 const logoStyle = {
-  width: '140px',
-  height: 'auto',
+  // width: '140px',
+  // height: 'auto',
   cursor: 'pointer',
 };
 
@@ -92,7 +92,7 @@ const [open, setOpen] = React.useState(false);
             >
               <img
                 src={
-                  ''
+                  'images/favicon.png'
                 }
                 style={logoStyle}
                 alt="Q"

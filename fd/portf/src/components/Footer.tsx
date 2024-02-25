@@ -13,8 +13,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 
 const logoStyle = {
-  width: '140px',
-  height: 'auto',
+  // width: '140px',
+  // height: 'auto',
 };
 
 function Copyright() {
@@ -60,13 +60,13 @@ export default function Footer() {
             <Box sx={{ ml: '-15px' }} mb={1}>
               <img
                 src={
-                  ''
+                  'images/favicon.png'
                 }
                 style={logoStyle}
                 alt="Q"
               />
             </Box>
-            <Typography variant="body2" fontWeight={600} gutterBottom>
+            <Typography variant="body2" color="text.dark" fontWeight={600} gutterBottom>
 Reach Us            </Typography>
             <Stack direction="row" spacing={1} useFlexGap mb={2}>
               <TextField
@@ -82,12 +82,12 @@ Reach Us            </Typography>
                   ariaLabel: 'Enter your email address',
                 }}
               />
-              <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
+              <Button variant="contained"  sx={{ flexShrink: 0 }}>
               Talk to us
               </Button>
             </Stack>
            
-            <Typography variant="body2" fontWeight={600} gutterBottom>
+            <Typography variant="body2" color="text.dark" fontWeight={600} gutterBottom>
               Newsletter
             </Typography>
             <Typography variant="body2" color="text.secondary" mb={2}>
@@ -120,7 +120,7 @@ Reach Us            </Typography>
             gap: 1,
           }}
         >
-          <Typography variant="body2" fontWeight={600}>
+          <Typography variant="body2" color="text.dark" fontWeight={600}>
             Product
           </Typography>
           <Link color="text.secondary" href="#">
@@ -146,7 +146,7 @@ Reach Us            </Typography>
             gap: 1,
           }}
         >
-          <Typography variant="body2" fontWeight={600}>
+          <Typography variant="body2" color="text.dark" fontWeight={600}>
             Company
           </Typography>
           <Link color="text.secondary" href="#">
@@ -181,7 +181,7 @@ Reach Us            </Typography>
           
           <Copyright />
         </div>
-        <Stack
+        {/* <Stack
           direction="row"
           justifyContent="left"
           spacing={1}
@@ -214,7 +214,7 @@ Reach Us            </Typography>
           >
             <LinkedInIcon />
           </IconButton>
-        </Stack>
+        </Stack> */}
       </Box>
     </Container>
   );

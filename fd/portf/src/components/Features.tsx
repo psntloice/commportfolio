@@ -111,7 +111,7 @@ export default function Features() {
                     }
                     return selectedItemIndex === index ? 'none' : '';
                   },
-                  backgroundColor: selectedItemIndex === index ? 'primary.main' : '',
+                  backgroundColor: selectedItemIndex === index ? 'GREEN' : '',
                   '& .MuiChip-label': {
                     color: selectedItemIndex === index ? '#fff' : '',
                   },
@@ -142,7 +142,7 @@ export default function Features() {
               <Typography color="text.primary" variant="body2" fontWeight="bold">
                 {selectedFeature.title}
               </Typography>
-              <Typography color="text.secondary" variant="body2" sx={{ my: 0.5 }}>
+              <Typography color="text.secondary" variant="body2" sx={{ my: 0.5, fontFamily: "Brandon Grotesque, sans-serif" }}>
                 {selectedFeature.description}
               </Typography>
               <Link

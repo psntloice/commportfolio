@@ -145,7 +145,7 @@ const { ref, inView } = useInView({
                   tier.title === 'Premium' ? 'primary.main' : undefined,
                 background:
                   tier.title === 'Premium'
-                    ? 'linear-gradient(#036343, #023b19)'
+                    ? 'primary.backgbox'
                     : undefined,
               }}
             >

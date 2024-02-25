@@ -84,7 +84,7 @@ export default function Highlights() {
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
         color: 'white',
-        bgcolor: '#06090a',
+        bgcolor: 'primary.backg',
       }}
     >
       <Container
@@ -100,9 +100,10 @@ export default function Highlights() {
           sx={{
             width: { sm: '100%', md: '60%' },
             textAlign: { sm: 'left', md: 'center' },
+            color :"text.dark",
           }}
         >
-          <Typography component="h2" variant="h4">
+          <Typography component="h2" color="text.dark" variant="h4">
             Highlights
           </Typography>
           <Typography variant="body1" sx={{ color: 'grey.400' }}>
@@ -121,18 +122,18 @@ export default function Highlights() {
                 sx={{
                   p: 3,
                   height: '100%',
-                  border: '1px solid',
+                  // border: '1px solid',
                   borderColor: 'grey.800',
                   background: 'transparent',
-                  backgroundColor: 'grey.900',
+                  backgroundColor: 'primary.backgbox',
                 }}
               >
-                <Box sx={{ opacity: '50%' }}>{item.icon}</Box>
+                <Box sx={{ opacity: '50%', color: '#86b086' }}>{item.icon}</Box>
                 <div>
-                  <Typography fontWeight="medium" gutterBottom>
+                  <Typography fontWeight="medium" color="text.dark" gutterBottom>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'grey.400' }}>
+                  <Typography variant="body2" sx={{ color: '#86b086' }}>
                     {item.description}
                   </Typography>
                 </div>
