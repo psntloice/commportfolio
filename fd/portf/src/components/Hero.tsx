@@ -114,9 +114,12 @@ QWERTY &nbsp;
 >
   <Box
     sx={{
-      width: "25%",
-      marginTop: "5rem",
-      maxHeight: "27rem", // Adjust the maximum height to cover desired number of lines
+      width: { xs: "100%", sm: "25%" }, // Full width on small screens, 25% on larger screens
+      maxWidth: { xs: "100%", sm: "none" }, // Remove maximum width on small screens
+      marginTop: { xs: "2rem", sm: "5rem" }, // Adjusted marginTop for better alignment
+      maxHeight: "27rem",
+      // width: "25%",
+      // marginTop: "5rem",
       height: "auto", // Adjust height to auto
       background: `url("/images/avatr2.png") center/contain no-repeat`,
       borderRadius: "90px",
