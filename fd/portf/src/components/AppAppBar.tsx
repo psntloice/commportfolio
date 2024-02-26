@@ -18,6 +18,9 @@ const logoStyle = {
   // width: '140px',
   // height: 'auto',
   cursor: 'pointer',
+  '@media (max-width:600px)': {
+    marginLeft: "17px",
+  },
 };
 
 interface AppAppBarProps {
@@ -94,8 +97,14 @@ const [open, setOpen] = React.useState(false);
                 src={
                   'images/favicon.png'
                 }
-                style={logoStyle}
-                alt="Q"
+                style={{
+                  // Define your inline styles directly here
+                  // width: '140px',
+                  // height: 'auto',
+                  cursor: 'pointer',
+                    marginLeft: "5px" ,
+                }}
+                                alt="Q"
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem

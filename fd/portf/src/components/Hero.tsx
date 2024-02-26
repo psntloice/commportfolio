@@ -150,8 +150,8 @@ QWERTY &nbsp;
     width: "calc(70% - 20px)", // Adjust width to fill remaining space after accounting for gap
     wordWrap: "break-word", // Ensure text wraps around the image
     '@media (max-width:600px)': {
-      width: "97vw",
-      margin: "0 auto", // Center horizontally
+      width: "90vw",
+      margin: "0 0 1px 1px", // Center horizontally
       justifyContent: "centre", // Center horizontally
       alignItems: "center", // Center vertically
     },
