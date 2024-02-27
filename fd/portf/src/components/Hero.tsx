@@ -17,7 +17,7 @@ export default function Hero() {
       sx={(theme) => ({
         width: "100%",
     background: `linear-gradient(180deg, ${
-      theme.palette.mode === "light" ? "#abebc9" : "#228b3a"
+      theme.palette.mode === "light" ? "#abebc9" : "#233823"
     }, ${
       theme.palette.mode === "light" ? "#FFFFFF" : "#090E10"
     } 30%,  ${theme.palette.mode === "light" ? "rgba(255, 255, 255, 0.5)" : "#090E10"} 50%)`,
@@ -63,7 +63,7 @@ export default function Hero() {
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-QWERTY &nbsp;
+QREVV &nbsp;
             </Typography>
             softwares
           </Typography>
@@ -161,18 +161,16 @@ I am Loice Kamau, a curator of digital experiences, dedicated
             to crafting bespoke websites and applications that embody
             sophistication and grace. In the delicate dance between design and
             functionality, I strive to create immersive digital landscapes that
-            captivate the senses and inspire the soul. With a brushstroke of
-            creativity and a meticulous attention to detail, I transform visions
-            into reality, bringing brands to life in the digital realm. Within
-            these digital halls, you will discover a collection of my finest
-            creations each one a testament to the artistry and craftsmanship
-            that defines my work. From minimalist masterpieces to intricately
-            of form and function, elegance and innovation. But my artistry
-            extends beyond pixels and lines of code. It is rooted in the bonds of
-            trust and collaboration forged with my clients. I listen intently to
-            their aspirations, infuse their essence into every project, and
-            deliver experiences that resonate with authenticity and refinement.
-            So, take a moment to wander through these digital galleries, where
+            captivate the senses and inspire the soul.With the stroke of creativity 
+            and an unwavering commitment to perfection, I transform concepts into 
+            captivating digital realities, breathing life into brands within the vast expanse 
+            of the digital realm. Explore my portfolio to unveil a gallery of masterpieces,
+             each a testament to the artistry and precision that defines my craft.
+             From simple elegance to intricate design, I bring a blend of style 
+             and innovation to every project. Beyond the technicalities, my artistry
+              is built on trust and collaboration with my clients. I listen closely to 
+              their dreams, infusing each project with their essence to create authentic 
+              and refined experiences. So, take a moment to wander through these digital galleries, where
             each click unveils a new masterpiece waiting to be explored. If
             you are inspired by what you see, I invite you to embark on a journey
             of creativity and collaboration with me. Thank you for gracing my
