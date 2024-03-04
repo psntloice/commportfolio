@@ -267,7 +267,7 @@ export default function Features() {
             ))}
           </Stack>
         </Grid>
-        {/* <Grid
+        <Grid
           item
           xs={12}
           md={6}
@@ -295,7 +295,7 @@ export default function Features() {
               }}
             />
           </Card>
-        </Grid> */}
+        </Grid>
       </Grid>
     </Container>
   );

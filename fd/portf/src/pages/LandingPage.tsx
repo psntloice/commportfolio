@@ -135,6 +135,7 @@ import Pricing from '../components/Pricing';
 import Features from '../components/Features';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import ProjectCard from 'components/Projects';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ToggleButton from '@mui/material/ToggleButton';
@@ -175,6 +176,8 @@ const LandingPage: React.FC = () => {
       {/* <AppAppBar mode={darkMode} toggleColorMode={toggleColorMode} /> */}
       <Box sx={{ bgcolor: 'background.default' }}>
         <Hero />
+        <Divider />
+        <ProjectCard />
         <Divider />
         <Features />
         <Divider />
