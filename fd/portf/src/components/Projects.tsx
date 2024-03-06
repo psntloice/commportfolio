@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 import { autocompleteClasses } from '@mui/material';
 
 const ProjectCard: React.FC = () => {
@@ -24,11 +25,19 @@ const ProjectCard: React.FC = () => {
       imageUrl: "/images/tnt.png",
       livePreviewLink: "https://tnt-nine.vercel.app/"
     },
+    {
+      title: "Automobile Management System",
+      description: "Still a work in progress",
+      imageUrl: "/images/autom.jpeg",
+      livePreviewLink: "https://autom-p1su.vercel.app/"
+    },
     // Add more projects as needed
   ];
 
   return (
-    <div style={{
+    <Container
+    id="projects"
+  style={{
 paddingTop: '20px',
 padding:'10px',
     display: 'flex', flexWrap: 'wrap', gap: '20px',
@@ -56,7 +65,7 @@ padding:'10px',
           </CardActions>
         </Card>
       ))}
-    </div>
+    </Container>
   );
 };
 

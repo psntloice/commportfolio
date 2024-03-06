@@ -105,6 +105,9 @@ const [open, setOpen] = React.useState(false);
                     marginLeft: "5px" ,
                 }}
                                 alt="Q"
+                                onClick={() => {
+                                  scrollToSection('hero')                                  // You can replace the console.log with your desired action
+                                }}
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem
@@ -150,17 +153,19 @@ const [open, setOpen] = React.useState(false);
               }}
             >
               {/* <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} /> */}
-              <Button
-                color="primary"
-                variant="text"
-                size="small"
-                component="a"
-                href="#"
-                target="_blank"
-              >
-                <SearchSharpIcon/>
-                Search
-              </Button>
+             
+              <MenuItem
+                  onClick={() => scrollToSection('projects')}
+                  sx={{ py: '6px', px: '12px' }}
+                >
+                  <Typography 
+                  color="primary"
+                  >
+                                   Gallery
+
+                  </Typography>
+                </MenuItem>
+               
               
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>

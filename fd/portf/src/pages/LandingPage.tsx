@@ -143,12 +143,26 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { ThemeProvider } from '@mui/material/styles';
 import mytheme from '../styles/mytheme';
 import { PaletteMode } from '@mui/material';
+import { styled } from '@mui/system'; // Added import for styled
+import Chip from '@mui/material/Chip';
 
 // Define the type for theme context
 interface ThemeContextType {
   darkMode: boolean;
   toggleDarkMode: () => void;
 }
+const Root = styled('div')(({ theme }) => ({
+  width: '100%',
+  color: theme.palette.text.secondary,
+  '& > :not(style) ~ :not(style)': {
+    marginTop: theme.spacing(2),
+  },
+}));
+// Define a styled component with custom styles
+const LargeChip = styled(Chip)(({ theme }) => ({
+  fontSize: '1.2rem', // Adjust the font size as needed
+  padding: '12px 24px', // Adjust the padding as needed
+}));
 
 // Define a context for managing the theme
 const ThemeContext = createContext<ThemeContextType>({
@@ -159,16 +173,17 @@ const ThemeContext = createContext<ThemeContextType>({
 // Custom hook to easily access the theme context
 const useTheme = () => useContext(ThemeContext);
 
+
 // Define your LandingPage component
 const LandingPage: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
-
   // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };
 
   return (
+    
     <ThemeProvider theme={mytheme(darkMode ? 'dark' : 'light')}>
             <CssBaseline />
       {/* <AppAppBar darkMode={darkMode} /> */}
@@ -176,10 +191,14 @@ const LandingPage: React.FC = () => {
       {/* <AppAppBar mode={darkMode} toggleColorMode={toggleColorMode} /> */}
       <Box sx={{ bgcolor: 'background.default' }}>
         <Hero />
-        <Divider />
-        <ProjectCard />
-        <Divider />
-        <Features />
+        <Root>
+      <Divider textAlign="right"> 
+      <LargeChip label="PROJECTS GALLERY" />
+      </Divider>
+      <ProjectCard />    
+    </Root>
+    {/* <Divider style={{ width: '75%', margin: '0 auto' }} /> */}
+            <Features />
         <Divider />
         <Highlights />
         <Divider />

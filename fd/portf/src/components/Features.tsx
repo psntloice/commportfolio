@@ -92,7 +92,7 @@ export default function Features() {
                         </Typography>
            
           </div>
-          <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
+          <Grid container item gap={1} sx={{ background: 'yellow', display: { xs: 'auto', sm: 'none' } }}>
             {items.map(({ title }, index) => (
               <Chip
                 key={index}
@@ -130,10 +130,11 @@ export default function Features() {
             variant="outlined"
             sx={{
               display: { xs: 'auto', sm: 'none' },
+              background: 'yellow',
               mt: 4,
             }}
           >
-            <Box
+            {/* <Box
               sx={{
                 backgroundImage: (theme) =>
                   theme.palette.mode === 'light'
@@ -143,7 +144,7 @@ export default function Features() {
                 backgroundPosition: 'center',
                 minHeight: 280,
               }}
-            />
+            /> */}
             <Box sx={{ px: 2, pb: 2 }}>
               <Typography color="text.primary" variant="body2" fontWeight="bold">
                 {selectedFeature.title}
@@ -282,7 +283,7 @@ export default function Features() {
               pointerEvents: 'none',
             }}
           >
-            <Box
+             <Box
               sx={{
                 m: 'auto',
                 width: 420,
@@ -293,7 +294,7 @@ export default function Features() {
                     ? items[selectedItemIndex].imageLight
                     : items[selectedItemIndex].imageDark,
               }}
-            />
+            /> 
           </Card>
         </Grid>
       </Grid>
