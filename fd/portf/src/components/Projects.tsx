@@ -29,7 +29,7 @@ const ProjectCard: React.FC = () => {
       title: "Automobile Management System",
       description: "Still a work in progress",
       imageUrl: "/images/autom.jpeg",
-      livePreviewLink: "https://autom-p1su.vercel.app/"
+      livePreviewLink: "https://autom-iota.vercel.app/"
     },
     // Add more projects as needed
   ];

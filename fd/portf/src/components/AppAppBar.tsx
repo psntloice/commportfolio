@@ -197,6 +197,9 @@ const [open, setOpen] = React.useState(false);
                   >
                     {/* <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} /> */}
                   </Box>
+                  <MenuItem onClick={() => scrollToSection('projects')}>
+Projects                  
+</MenuItem>
                   <MenuItem onClick={() => scrollToSection('features')}>
                     Features
                   </MenuItem>
