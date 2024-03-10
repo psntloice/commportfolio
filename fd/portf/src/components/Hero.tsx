@@ -159,9 +159,9 @@ QREVV &nbsp;
 >
 I am Loice Kamau, a curator of digital experiences, dedicated
             to crafting bespoke websites and applications that embody
-            sophistication and grace. In the delicate dance between design and
+            sophistication and grace. Between design and
             functionality, I strive to create immersive digital landscapes that
-            captivate the senses and inspire the soul.With the stroke of creativity 
+            captivate the senses and inspire the soul.With creativity 
             and an unwavering commitment to perfection, I transform concepts into 
             captivating digital realities, breathing life into brands within the vast expanse 
             of the digital realm. Explore my portfolio to unveil a gallery of masterpieces,

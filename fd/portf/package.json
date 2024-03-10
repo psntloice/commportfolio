@@ -10,17 +10,19 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.11.0",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@mui/icons-material": "^5.15.10",
     "@mui/lab": "^5.0.0-alpha.165",
     "@mui/material": "^5.15.10",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-intersection-observer": "^9.8.0"
+    "react-intersection-observer": "^9.8.0",
+    "validator": "^13.11.0"
   },
   "devDependencies": {
     "@types/node": "^20",
-        "@types/react": "^18",
+    "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",

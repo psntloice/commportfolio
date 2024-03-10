@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -12,10 +12,9 @@ import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 
-const logoStyle = {
-  // width: '140px',
-  // height: 'auto',
-};
+import { run } from '../utils/mailchimp';
+
+
 
 function Copyright() {
   return (
@@ -27,7 +26,57 @@ function Copyright() {
   );
 }
 
+
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [isValid, setIsValid] = useState<boolean | null>(null); // State to track email validity
+  const [subscribed, setSubscribed] = useState(false); // State to track subscription status
+
+  const handleClick2 = async () => {
+    try {
+      await run();
+      alert('Function executed successfully!');
+    } catch (error) {
+      console.error('Error executing function:', error);
+      alert('An error occurred while executing the function.');
+    }
+  };
+
+  const validateEmail = (email: string | undefined): RegExpMatchArray | null => {
+    if (!email) return null; // handle case where email is undefined
+
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+  const handleClick = () => {
+    const validation = validateEmail(email);
+    setIsValid(validation !== null);
+    if (validation) {
+      console.log('Subscribing user with lemail:');
+      // Perform subscription logic here, for example, sending a request to your backend
+      // You can use fetch or an API library like Axios for making HTTP requests
+      // Once the subscription is successful, update the state to reflect the subscription status
+      subscribeUser(email); // This is a placeholder function, implement your subscription logic here
+    }
+    else{
+      console.log('Provide correct email');
+    }
+  };
+
+  const subscribeUser = (email: string) => {
+    // Placeholder function for subscription logic
+    console.log('Subscribing user with email:', email);
+    // Assume the subscription is successful for demonstration purposes
+    setSubscribed(true);
+  };
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
   return (
     <Container
       sx={{
@@ -62,7 +111,6 @@ export default function Footer() {
                 src={
                   'images/favicon.png'
                 }
-                style={logoStyle}
                 alt="Q"
               />
             </Box>
@@ -82,9 +130,9 @@ Reach Us            </Typography>
                   ariaLabel: 'Enter your email address',
                 }}
               />
-              <Button variant="contained"  sx={{ flexShrink: 0 }}>
-              Talk to us
-              </Button>
+              <Button variant="contained"  onClick={handleClick2} sx={{ flexShrink: 0 }} >
+      Talk to us
+    </Button>
             </Stack>
            
             <Typography variant="body2" color="text.dark" fontWeight={600} gutterBottom>
@@ -102,14 +150,28 @@ Reach Us            </Typography>
                 fullWidth
                 aria-label="Enter your email address"
                 placeholder="Your email address"
+                value={email}
+        onChange={handleInputChange}
                 inputProps={{
                   autocomplete: 'off',
                   ariaLabel: 'Enter your email address',
                 }}
               />
-              <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
-                Subscribe
-              </Button>
+            
+              
+            {/* <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} /> */}
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleClick}
+        sx={{ flexShrink: 0 }}
+      >
+        Subscribe
+      </Button>
+      {isValid !== null && (
+        <p>{isValid ? 'Valid email address' : 'Invalid email address'}</p>
+      )}
+      {subscribed && <p>Subscribed successfully!</p>}
             </Stack>
           </Box>
         </Box>
@@ -126,18 +188,14 @@ Reach Us            </Typography>
           <Link color="text.secondary" href="#">
             Features
           </Link>
-          <Link color="text.secondary" href="#">
-            Testimonials
-          </Link>
+         
           <Link color="text.secondary" href="#">
             Highlights
           </Link>
           <Link color="text.secondary" href="#">
             Pricing
           </Link>
-          <Link color="text.secondary" href="#">
-            FAQs
-          </Link>
+          
         </Box>
         <Box
           sx={{
@@ -155,12 +213,7 @@ Reach Us            </Typography>
           <Link color="text.secondary" href="#">
             Terms
           </Link>
-          <Link color="text.secondary" href="#">
-            Press
-          </Link>
-          <Link color="text.secondary" href="#">
-            Privacy
-          </Link>
+          
           <Link color="text.secondary" href="#">
             Contact
           </Link>
