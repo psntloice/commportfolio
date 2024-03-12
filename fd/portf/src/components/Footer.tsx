@@ -122,6 +122,7 @@ export default function Footer() {
             flexDirection: 'column',
             gap: 2,
             Width: { xs: '100%', sm: '30%' },
+            marginBottom: '4px',
           }}
           mb={2}
         >
