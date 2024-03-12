@@ -8,6 +8,8 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -28,38 +30,70 @@ function Copyright() {
 
 
 
+
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [isValid, setIsValid] = useState<boolean | null>(null); // State to track email validity
   const [subscribed, setSubscribed] = useState(false); // State to track subscription status
+  const [note, setNote] = useState('');
+  const [talkmail, setTMail] = useState('');
 
-  const SubscribeClick = async (e:any) => {
-    e.preventDefault();
+  const showConfirmationAlert = () => {
+    confirmAlert({
+      title: 'Confirm',
+      message: 'Are you sure you want to subscribe? You will receive emails from us',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: async (e:any) => {
 
-    try {
-      // Send a POST request to the serverless function
-      await axios.post('/api/subscribe', { email });
-      alert('Successfully subscribed!');
-      setEmail('');
-    } catch (error) {
-      alert('Failed to subscribe. Please try again later.');
-      console.error('Subscription failed:', error);
-    }
-  };
-
-  const handleTalkToUsClick = async () => {
-    try {
-      // Call the serverless function when the button is clicked
-      await axios.post('../utils/sendEmail');
-      alert('Message sent successfully!');
-    } catch (error) {
-      console.error('Failed to send message:', error);
-      alert('Failed to send message. Please try again later.');
-    }
+            e.preventDefault();
+            const validation = validateEmail(email); // Validate the email
+            if (validation) {
+              try {
+              // Send a POST request to the serverless function
+              await axios.post('/api/subscribe', { email });
+                alert('Successfully subscribed!');
+                setEmail('');
+              } catch (error) {
+                alert('Failed to subscribe. Please try again later.');
+                console.error('Subscription failed:', error);
+              }
+            } else {
+              alert('Invalid email. Please provide a valid email address.');
+            }
+           
+        
+            setEmail('');
+          }
+        },
+        {
+          label: 'No',
+          onClick: () => {}
+        }
+      ]
+    });
   };
   
-
-
+  
+  const handleTalkToUsClick = async () => {
+    const validation = validateEmail(email); // Validate the email
+            if (validation) {
+              try {
+              // Call the serverless function when the button is clicked
+      await axios.post('../utils/sendEmail', { talkmail, note });
+      alert('Message sent successfully!');
+      setNote('');
+            setTMail('');
+              } catch (error) {
+                console.error('Failed to send message:', error);
+                alert('Failed to send message. Please try again later.');
+              }
+            } else {
+              alert('Invalid email. Please provide a valid email address.');
+            }   
+  };
+  
   const validateEmail = (email: string | undefined): RegExpMatchArray | null => {
     if (!email) return null; // handle case where email is undefined
 
@@ -70,27 +104,6 @@ export default function Footer() {
       );
   };
 
-  const handleClick = () => {
-    const validation = validateEmail(email);
-    setIsValid(validation !== null);
-    if (validation) {
-      console.log('Subscribing user with lemail:');
-      // Perform subscription logic here, for example, sending a request to your backend
-      // You can use fetch or an API library like Axios for making HTTP requests
-      // Once the subscription is successful, update the state to reflect the subscription status
-      subscribeUser(email); // This is a placeholder function, implement your subscription logic here
-    }
-    else{
-      console.log('Provide correct email');
-    }
-  };
-
-  const subscribeUser = (email: string) => {
-    // Placeholder function for subscription logic
-    console.log('Subscribing user with email:', email);
-    // Assume the subscription is successful for demonstration purposes
-    setSubscribed(true);
-  };
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
@@ -151,15 +164,15 @@ export default function Footer() {
               />
             
               
-            {/* <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} /> */}
       <Button
         variant="contained"
         color="primary"
-        onClick={SubscribeClick}
+        onClick={showConfirmationAlert}
         sx={{ flexShrink: 0 }}
       >
         Subscribe
       </Button>
+      
       {/* {isValid !== null && (
         <p>{isValid ? 'Valid email address' : 'Invalid email address'}</p>
       )}
@@ -206,6 +219,8 @@ Want To Reach Us?            </Typography>
                 variant="outlined"
                 aria-label="Enter your email address"
                 placeholder="Your email address"
+                value={talkmail} // Controlled by state
+                onChange={(e) => setTMail(e.target.value)} // Update state on change
                 inputProps={{
                   autocomplete: 'off',
                   ariaLabel: 'Enter your email address',
@@ -223,6 +238,8 @@ Want To Reach Us?            </Typography>
                 placeholder="Your note"
                 multiline={true}  // Add this line
                 rows={4} 
+                value={note} // Controlled by state
+                onChange={(e) => setNote(e.target.value)} // Update state on change
                 inputProps={{
                   autocomplete: 'off',
                   ariaLabel: 'Enter your note',
@@ -293,40 +310,7 @@ Want To Reach Us?            </Typography>
           
           <Copyright />
         </div>
-        {/* <Stack
-          direction="row"
-          justifyContent="left"
-          spacing={1}
-          useFlexGap
-          sx={{
-            color: 'text.secondary',
-          }}
-        >
-          <IconButton
-            color="inherit"
-            href="#"
-            aria-label="GitHub"
-            sx={{ alignSelf: 'center' }}
-          >
-            <FacebookIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="#"
-            aria-label="X"
-            sx={{ alignSelf: 'center' }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="#"
-            aria-label="LinkedIn"
-            sx={{ alignSelf: 'center' }}
-          >
-            <LinkedInIcon />
-          </IconButton>
-        </Stack> */}
+       
       </Box>
     </Container>
   );
