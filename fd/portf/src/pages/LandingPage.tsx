@@ -135,7 +135,6 @@ import Pricing from '../components/Pricing';
 import Features from '../components/Features';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
-import SubscribeForm from '../components/SubscribeForm';
 import ProjectCard from 'components/Projects';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -205,7 +204,6 @@ const LandingPage: React.FC = () => {
         <Divider />
         <Pricing />
         <Divider />
-        <SubscribeForm />
 
         <FAQ />
         <Divider />

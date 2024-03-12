@@ -12,8 +12,7 @@ import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 
-import { run } from '../utils/mailchimp';
-
+import axios from 'axios';
 
 
 function Copyright() {
@@ -26,21 +25,55 @@ function Copyright() {
   );
 }
 
+function SubscribeClick() {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
+
+    try {
+      // Send a POST request to the serverless function
+      await axios.post('/api/subscribe', { email });
+      alert('Successfully subscribed!');
+      setEmail('');
+    } catch (error) {
+      alert('Failed to subscribe. Please try again later.');
+      console.error('Subscription failed:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email address"
+        required
+      />
+      <button type="submit">Subscribe</button>
+    </form>
+  );
+}
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [isValid, setIsValid] = useState<boolean | null>(null); // State to track email validity
   const [subscribed, setSubscribed] = useState(false); // State to track subscription status
 
-  const handleClick2 = async () => {
+
+  const handleTalkToUsClick = async () => {
     try {
-      await run();
-      alert('Function executed successfully!');
+      // Call the serverless function when the button is clicked
+      await axios.post('../utils/sendEmail');
+      alert('Message sent successfully!');
     } catch (error) {
-      console.error('Error executing function:', error);
-      alert('An error occurred while executing the function.');
+      console.error('Failed to send message:', error);
+      alert('Failed to send message. Please try again later.');
     }
   };
+  
+
 
   const validateEmail = (email: string | undefined): RegExpMatchArray | null => {
     if (!email) return null; // handle case where email is undefined
@@ -130,7 +163,7 @@ Reach Us            </Typography>
                   ariaLabel: 'Enter your email address',
                 }}
               />
-              <Button variant="contained"  onClick={handleClick2} sx={{ flexShrink: 0 }} >
+              <Button variant="contained"  onClick={handleTalkToUsClick} sx={{ flexShrink: 0 }} >
       Talk to us
     </Button>
             </Stack>
@@ -163,7 +196,7 @@ Reach Us            </Typography>
       <Button
         variant="contained"
         color="primary"
-        onClick={handleClick}
+        onClick={SubscribeClick}
         sx={{ flexShrink: 0 }}
       >
         Subscribe
