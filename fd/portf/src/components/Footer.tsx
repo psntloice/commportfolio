@@ -25,10 +25,14 @@ function Copyright() {
   );
 }
 
-function SubscribeClick() {
-  const [email, setEmail] = useState('');
 
-  const handleSubmit = async (e:any) => {
+
+export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [isValid, setIsValid] = useState<boolean | null>(null); // State to track email validity
+  const [subscribed, setSubscribed] = useState(false); // State to track subscription status
+
+  const SubscribeClick = async (e:any) => {
     e.preventDefault();
 
     try {
@@ -41,26 +45,6 @@ function SubscribeClick() {
       console.error('Subscription failed:', error);
     }
   };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email address"
-        required
-      />
-      <button type="submit">Subscribe</button>
-    </form>
-  );
-}
-
-export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [isValid, setIsValid] = useState<boolean | null>(null); // State to track email validity
-  const [subscribed, setSubscribed] = useState(false); // State to track subscription status
-
 
   const handleTalkToUsClick = async () => {
     try {
@@ -163,6 +147,19 @@ Reach Us            </Typography>
                   ariaLabel: 'Enter your email address',
                 }}
               />
+              <TextField
+                id="outlined-basic"
+                hiddenLabel
+                size="small"
+                variant="outlined"
+                fullWidth
+                aria-label="Enter your note"
+                placeholder="Your note"
+                inputProps={{
+                  autocomplete: 'off',
+                  ariaLabel: 'Enter your note',
+                }}
+              />
               <Button variant="contained"  onClick={handleTalkToUsClick} sx={{ flexShrink: 0 }} >
       Talk to us
     </Button>
@@ -184,7 +181,9 @@ Reach Us            </Typography>
                 aria-label="Enter your email address"
                 placeholder="Your email address"
                 value={email}
-        onChange={handleInputChange}
+        // onChange={handleInputChange}
+        onChange={(e) => setEmail(e.target.value)}
+
                 inputProps={{
                   autocomplete: 'off',
                   ariaLabel: 'Enter your email address',
@@ -201,10 +200,10 @@ Reach Us            </Typography>
       >
         Subscribe
       </Button>
-      {isValid !== null && (
+      {/* {isValid !== null && (
         <p>{isValid ? 'Valid email address' : 'Invalid email address'}</p>
       )}
-      {subscribed && <p>Subscribed successfully!</p>}
+      {subscribed && <p>Subscribed successfully!</p>} */}
             </Stack>
           </Box>
         </Box>
