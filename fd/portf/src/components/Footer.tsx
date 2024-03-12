@@ -7,6 +7,7 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
 
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -102,6 +103,7 @@ export default function Footer() {
         alignItems: 'center',
         gap: { xs: 4, sm: 8 },
         py: { xs: 8, sm: 10 },
+       
         textAlign: { sm: 'center', md: 'left' },
       }}
     >
@@ -110,6 +112,7 @@ export default function Footer() {
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'row' },
           width: '100%',
+          
           justifyContent: 'space-between',
         }}
       >
@@ -117,59 +120,15 @@ export default function Footer() {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 4,
-            minWidth: { xs: '100%', sm: '60%' },
+            gap: 2,
+            Width: { xs: '100%', sm: '30%' },
           }}
         >
-          <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-          
-            <Box sx={{ ml: '-15px' }} mb={1}>
-              <img
-                src={
-                  'images/favicon.png'
-                }
-                alt="Q"
-              />
-            </Box>
-            <Typography variant="body2" color="text.dark" fontWeight={600} gutterBottom>
-Reach Us            </Typography>
-            <Stack direction="row" spacing={1} useFlexGap mb={2}>
-              <TextField
-                id="outlined-basic"
-                hiddenLabel
-                size="small"
-                variant="outlined"
-                fullWidth
-                aria-label="Enter your email address"
-                placeholder="Your email address"
-                inputProps={{
-                  autocomplete: 'off',
-                  ariaLabel: 'Enter your email address',
-                }}
-              />
-              <TextField
-                id="outlined-basic"
-                hiddenLabel
-                size="small"
-                variant="outlined"
-                fullWidth
-                aria-label="Enter your note"
-                placeholder="Your note"
-                inputProps={{
-                  autocomplete: 'off',
-                  ariaLabel: 'Enter your note',
-                }}
-              />
-              <Button variant="contained"  onClick={handleTalkToUsClick} sx={{ flexShrink: 0 }} >
-      Talk to us
-    </Button>
-            </Stack>
-           
-            <Typography variant="body2" color="text.dark" fontWeight={600} gutterBottom>
+        <Typography variant="body2" color="text.dark" fontWeight={600} gutterBottom>
               Newsletter
             </Typography>
             <Typography variant="body2" color="text.secondary" mb={2}>
-              Subscribe to our newsletter for weekly updates and promotions.
+              Subscribe to our newsletter for updates.
             </Typography>
             <Stack direction="row" spacing={1} useFlexGap>
               <TextField
@@ -177,7 +136,6 @@ Reach Us            </Typography>
                 hiddenLabel
                 size="small"
                 variant="outlined"
-                fullWidth
                 aria-label="Enter your email address"
                 placeholder="Your email address"
                 value={email}
@@ -205,13 +163,84 @@ Reach Us            </Typography>
       )}
       {subscribed && <p>Subscribed successfully!</p>} */}
             </Stack>
-          </Box>
-        </Box>
+       </Box>
+       <Box
+        id="talktous"
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+          
+            gap: 2,
+            Width: { xs: '100%', sm: '50%' },
+            minWidth: { xs: '100%', sm: '55%' },
+          }}
+          
+        >    
+       <Stack
+                direction="column"
+                color="inherit"
+                component={Card}
+                spacing={1}
+                useFlexGap
+                sx={{
+                  p: 3,
+                  height: '100%',
+                  border: '0.5px solid',
+                  borderColor: 'primary.main',
+                  backgroundColor: 'primary',
+                  color:'primary.contrastText',
+                }}
+              >
+       
+          
+            
+            <Typography variant="body2" color="text.dark" fontWeight={900} fontSize="100%" mb={2} gutterBottom>
+Want To Reach Us?            </Typography>
+            <Stack direction="row" spacing={1} useFlexGap mb={2}>
+              <TextField
+                id="outlined-basic"
+                hiddenLabel
+                size="small"
+                variant="outlined"
+                aria-label="Enter your email address"
+                placeholder="Your email address"
+                inputProps={{
+                  autocomplete: 'off',
+                  ariaLabel: 'Enter your email address',
+                }}
+              />
+              </Stack>
+              <Stack direction="column" spacing={1} useFlexGap mb={2}>
+              <TextField
+                id="outlined-basic"
+                hiddenLabel
+                size="medium"
+                variant="outlined"
+                fullWidth
+                aria-label="Enter your note"
+                placeholder="Your note"
+                multiline={true}  // Add this line
+                rows={4} 
+                inputProps={{
+                  autocomplete: 'off',
+                  ariaLabel: 'Enter your note',
+                }}
+              />
+              <Button variant="contained"  onClick={handleTalkToUsClick} sx={{ flexShrink: 0 }} >
+      Talk to us
+    </Button>
+    </Stack>           
+
+     </Stack>
+     </Box> 
+     
         <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
             gap: 1,
+            minWidth: {  sm: '5%' },
+
           }}
         >
           <Typography variant="body2" color="text.dark" fontWeight={600}>
@@ -227,18 +256,6 @@ Reach Us            </Typography>
           <Link color="text.secondary" href="#">
             Pricing
           </Link>
-          
-        </Box>
-        <Box
-          sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
-          }}
-        >
-          <Typography variant="body2" color="text.dark" fontWeight={600}>
-            Company
-          </Typography>
           <Link color="text.secondary" href="#">
             About us
           </Link>
@@ -262,6 +279,14 @@ Reach Us            </Typography>
           borderColor: 'divider',
         }}
       >
+        <Box sx={{ ml: '-15px' }} mb={1}>
+              <img
+                src={
+                  'images/favicon.png'
+                }
+                alt="Q"
+              />
+            </Box>
         <div>
           
           <Copyright />

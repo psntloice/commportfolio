@@ -101,6 +101,19 @@ const { ref, inView } = useInView({
   /* Optional options object */
   threshold: 0.5, // Trigger when 50% of the target is visible
 });
+const scrollToSection = (sectionId: string) => {
+  const sectionElement = document.getElementById(sectionId);
+  const offset = 128;
+  if (sectionElement) {
+    const targetScroll = sectionElement.offsetTop - offset;
+    sectionElement.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth',
+    });
+  }
+};
+
   return (
     <Container
       id="pricing"
@@ -266,7 +279,8 @@ const { ref, inView } = useInView({
     background: (theme) =>
                           theme.palette.mode === 'light' ? '' : 'none',
                           mt: 4,
-                          flexShrink: 0 }}> 
+                          flexShrink: 0 }}
+                          onClick={() => scrollToSection('talktous')}> 
   
     Contact us for pricing
     </Button>
