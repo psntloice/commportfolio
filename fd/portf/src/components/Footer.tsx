@@ -123,6 +123,7 @@ export default function Footer() {
             gap: 2,
             Width: { xs: '100%', sm: '30%' },
           }}
+          mb={2}
         >
         <Typography variant="body2" color="text.dark" fontWeight={600} gutterBottom>
               Newsletter
