@@ -35,8 +35,19 @@ export default function Footer() {
   const [email, setEmail] = useState('');
   const [isValid, setIsValid] = useState<boolean | null>(null); // State to track email validity
   const [subscribed, setSubscribed] = useState(false); // State to track subscription status
-  const [note, setNote] = useState('');
-  const [talkmail, setTMail] = useState('');
+ 
+  const [emailData, setEmailData] = useState({
+    talkmail: '',
+    note: '',
+  });
+  const [sending, setSending] = useState(false);
+  const handleChange = (e:any) => {
+    const { name, value } = e.target;
+    setEmailData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const showConfirmationAlert = () => {
     confirmAlert({
@@ -45,10 +56,8 @@ export default function Footer() {
       buttons: [
         {
           label: 'Yes',
-          onClick: async (e:any) => {
-
-            e.preventDefault();
-            const validation = validateEmail(email); // Validate the email
+          onClick: async () => {
+                       const validation = validateEmail(email); // Validate the email
             if (validation) {
               try {
               // Send a POST request to the serverless function
@@ -74,22 +83,30 @@ export default function Footer() {
       ]
     });
   };
-  
+
+  const sendto  = async () => {
+    setSending(true);     
+
+    const response = await axios.post('/api/sendEmail', emailData);
+    alert('Message sent successfully!');
+          setEmailData({note: '', talkmail: ''});         
+          setSending(false);
+    console.log('Email sent');
+  }
   
   const handleTalkToUsClick = async () => {
-    const validation = validateEmail(email); // Validate the email
-            if (validation) {
+    const { talkmail: tm } = emailData;
+        const validation = validateEmail(tm); // Validate the email
+    if (validation) {     
               try {
               // Call the serverless function when the button is clicked
-      await axios.post('../utils/sendEmail', { talkmail, note });
-      alert('Message sent successfully!');
-      setNote('');
-            setTMail('');
-              } catch (error) {
-                console.error('Failed to send message:', error);
+              sendto();
+         } catch (error) {
+                                console.error('Failed to send message:', error);
                 alert('Failed to send message. Please try again later.');
               }
             } else {
+              console.log(email);
               alert('Invalid email. Please provide a valid email address.');
             }   
   };
@@ -102,6 +119,7 @@ export default function Footer() {
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
+    
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -172,11 +190,7 @@ export default function Footer() {
       >
         Subscribe
       </Button>
-      
-      {/* {isValid !== null && (
-        <p>{isValid ? 'Valid email address' : 'Invalid email address'}</p>
-      )}
-      {subscribed && <p>Subscribed successfully!</p>} */}
+  
             </Stack>
        </Box>
        <Box
@@ -219,8 +233,10 @@ Want To Reach Us?            </Typography>
                 variant="outlined"
                 aria-label="Enter your email address"
                 placeholder="Your email address"
-                value={talkmail} // Controlled by state
-                onChange={(e) => setTMail(e.target.value)} // Update state on change
+                type="email"
+                name="talkmail"
+                value={emailData.talkmail}
+                onChange={handleChange} // Update state on change
                 inputProps={{
                   autocomplete: 'off',
                   ariaLabel: 'Enter your email address',
@@ -238,8 +254,9 @@ Want To Reach Us?            </Typography>
                 placeholder="Your note"
                 multiline={true}  // Add this line
                 rows={4} 
-                value={note} // Controlled by state
-                onChange={(e) => setNote(e.target.value)} // Update state on change
+                name="note"
+        value={emailData.note}
+        onChange={handleChange}// Update state on change
                 inputProps={{
                   autocomplete: 'off',
                   ariaLabel: 'Enter your note',
@@ -248,6 +265,7 @@ Want To Reach Us?            </Typography>
               <Button variant="contained"  onClick={handleTalkToUsClick} sx={{ flexShrink: 0 }} >
       Talk to us
     </Button>
+    {sending && <p>Sending...</p>}
     </Stack>           
 
      </Stack>

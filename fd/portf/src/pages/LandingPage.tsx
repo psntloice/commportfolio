@@ -130,6 +130,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import AppAppBar from '../components/AppAppBar';
 import Hero from '../components/Hero';
+
 import Highlights from '../components/Highlights';
 import Pricing from '../components/Pricing';
 import Features from '../components/Features';
