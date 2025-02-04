@@ -157,26 +157,12 @@ QREVV &nbsp;
     },
   }}
 >
-I am Loice Kamau, a curator of digital experiences, dedicated
-            to crafting bespoke websites and applications that embody
-            sophistication and grace. Between design and
-            functionality, I strive to create immersive digital landscapes that
-            captivate the senses and inspire the soul.With creativity 
-            and an unwavering commitment to perfection, I transform concepts into 
-            captivating digital realities, breathing life into brands within the vast expanse 
-            of the digital realm. Explore my portfolio to unveil a gallery of masterpieces,
-             each a testament to the artistry and precision that defines my craft.
-             From simple elegance to intricate design, I bring a blend of style 
-             and innovation to every project. Beyond the technicalities, my artistry
-              is built on trust and collaboration with my clients. I listen closely to 
-              their dreams, infusing each project with their essence to create authentic 
-              and refined experiences. So, take a moment to wander through these digital galleries, where
-            each click unveils a new masterpiece waiting to be explored. If
-            you are inspired by what you see, I invite you to embark on a journey
-            of creativity and collaboration with me. Thank you for gracing my
-            digital atelier with your presence. Together, let uss craft digital
-            experiences that transcend the ordinary and embrace the
-            extraordinary.  </Typography>
+Loice Kamau here 😊, a dream to reality curator. Between design and
+            functionality, creativity and an unwavering commitment to perfection, I transform concepts into 
+            a happy client result. Explore my portfolio to unveil masterpieces.
+If  you are inspired by what you see, I invite you to embark a journey
+            of creativity and collaboration with me. From simple elegance to intricate design let us craft digital
+            experiences that generally make us satisfied.  </Typography>
 </Box>
             
           
